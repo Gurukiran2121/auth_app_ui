@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #404040;
+}
+
+
+:root{
+    --font-size-heading : 3.5rem;
+    --font-size-subheading : 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --font-size-heading: 2.5rem;
+    --font-size-subheading: 1.5rem;
+  }
+}
+
+
+@media screen and (max-width: 568px) {
+  :root {
+    --font-size-heading: 2rem;
+    --font-size-subheading: 1rem;
+  }
+}
+

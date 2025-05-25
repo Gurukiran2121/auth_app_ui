@@ -1,0 +1,70 @@
+.LoginPage {
+  height: 100vh;
+  padding: 1rem;
+  .LoginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 0rem 4rem;
+  }
+  .Illustration {
+    display: flex;
+    align-items: center;
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: 700px;
+      max-height: 500px;
+      min-height: 200px;
+      min-width: 300px;
+    }
+  }
+
+  .authContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .authTitle {
+      font-size: var(--font-size-heading);
+    }
+    .authDescription {
+      font-size: var(--font-size-subheading);
+    }
+
+    .loginButton {
+      border: 1px solid #e6e6e6;
+      padding: 1rem;
+      font-size: 1rem;
+      background-color: #722ed1;
+      color: white;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .loginButton:hover {
+      background-color: #531dab;
+    }
+    .loginButton:active {
+      background-color: #391085;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .LoginPage {
+    .LoginContainer {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 0rem 2vw;
+    }
+    .Illustration {
+      height: fit-content;
+      img {
+        height: 150px;
+        width: 200px;
+      }
+    }
+  }
+}
