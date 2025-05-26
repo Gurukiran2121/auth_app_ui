@@ -17,5 +17,11 @@ export default defineConfig({
   build: { target: "esnext" , modulePreload : false , minify : false , cssCodeSplit : false },
   server: {
     port: 4005,
+    cors : {
+      origin : ["http://localhost:4008" , "https://chatsyn.netlify.app"],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: ['*'],
+      credentials: true
+    }
   },
 });
