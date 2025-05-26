@@ -11,10 +11,28 @@ export default defineConfig({
       exposes: {
         "./AuthApp": "./src/App.jsx",
       },
-      shared: ["react", "react-dom"],
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "^18.2.0",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: false,
+        },
+        "@auth0/auth0-react": {
+          singleton: true,
+          requiredVersion: "^2.3.0",
+        },
+      },
     }),
   ],
-  build: { target: "esnext" , modulePreload : false , minify : false , cssCodeSplit : false },
+  build: {
+    target: "esnext",
+    modulePreload: false,
+    minify: false,
+    cssCodeSplit: false,
+  },
   server: {
     port: 4005,
   },
