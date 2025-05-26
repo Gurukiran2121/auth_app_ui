@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import style from "./login.module.css";
-import illustration from "../../../public/images/loginScreen.png";
 import api from "../../components/axiosinstance";
 
 const LoginPage = () => {
@@ -30,11 +29,15 @@ const LoginPage = () => {
     postUserData();
   }, [isAuthenticated]);
 
+  const loginIllustrationPath = `${
+    import.meta.env.BASE_URL
+  }images/loginScreen.png`;
+
   return (
     <div className={style.LoginPage}>
       <div className={style.LoginContainer}>
         <div className={style.Illustration}>
-          <img src={illustration} alt="Login Illustration" />
+          <img src={loginIllustrationPath} alt="Login Illustration" />
         </div>
         <div className={style.authContainer}>
           <h1 className={style.authTitle}>Welcome to SynChat</h1>
