@@ -8,8 +8,14 @@
   Access-Control-Max-Age: 86400
 
 # Apply CORS headers specifically to the remoteEntry.js file
-# (Adjust the path if your remoteEntry.js is nested differently, e.g., /another-path/remoteEntry.js)
 /remoteEntry.js
+  Access-Control-Allow-Origin: https://chatsyn.netlify.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: *
+  Access-Control-Max-Age: 86400
+
+# >>> ADD THIS NEW RULE FOR IMAGES <<<
+/images/*
   Access-Control-Allow-Origin: https://chatsyn.netlify.app
   Access-Control-Allow-Methods: GET, OPTIONS
   Access-Control-Allow-Headers: *
