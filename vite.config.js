@@ -17,7 +17,6 @@ export default defineConfig({
   build: { target: "esnext" , modulePreload : false , minify : false , cssCodeSplit : false },
   server: {
     port: 4005,
-    cors :false
   },
   base: "/",
 });
