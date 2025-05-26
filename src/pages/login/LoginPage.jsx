@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import style from "./login.module.css";
 import illustration from "../../../public/loginScreen.png";
+import api from "../../components/axiosinstance";
 
 const LoginPage = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, user, isAuthenticated, getAccessTokenSilently } =
+    useAuth0();
+  const hasPosted = useRef(false);
+
+  const postUserData = async () => {
+    if (user && isAuthenticated && !hasPosted.current) {
+      try {
+        hasPosted.current = true; // Prevent multiple posts
+        const token = await getAccessTokenSilently();
+        await api.post("/me", user, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      } catch (error) {
+        console.error("Error posting user data:", error);
+        hasPosted.current = false;
+        throw new Error("Failed to post user data");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    postUserData();
+  }, [isAuthenticated]);
 
   return (
     <div className={style.LoginPage}>
