@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import style from "./login.module.css";
-import illustration from "../../../public/loginScreen.png";
+import illustration from "../../../public/images/loginScreen.png";
 import api from "../../components/axiosinstance";
 
 const LoginPage = () => {
