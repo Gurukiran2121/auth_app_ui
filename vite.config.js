@@ -12,18 +12,9 @@ export default defineConfig({
         "./AuthApp": "./src/App.jsx",
       },
       shared: {
-        react: {
-          singleton: true,
-          requiredVersion: "^18.2.0",
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: false,
-        },
-        "@auth0/auth0-react": {
-          singleton: true,
-          requiredVersion: "^2.3.0",
-        },
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false },
+        "@auth0/auth0-react": { singleton: true, requiredVersion: "^2.3.0" },
       },
     }),
   ],
