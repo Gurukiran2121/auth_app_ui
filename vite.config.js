@@ -15,6 +15,7 @@ export default defineConfig({
         react: { singleton: true, requiredVersion: false },
         "react-dom": { singleton: true, requiredVersion: false },
         "@auth0/auth0-react": { singleton: true, requiredVersion: "^2.3.0" },
+        zustand: { singleton: true },
       },
     }),
   ],

@@ -28,6 +28,13 @@ const LoginPage = () => {
   useEffect(() => {
     if (!isAuthenticated) return;
     postUserData();
+    const getUserData = new CustomEvent("getUserData", {
+      detail: {
+        user,
+        isAuthenticated,
+      },
+    });
+    window.dispatchEvent(getUserData);
   }, [isAuthenticated]);
 
   return (
